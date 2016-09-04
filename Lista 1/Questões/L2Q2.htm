@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L2Q2_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L2Q2_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L1Q2</li>
+</ul>
+	
+<h1><strong>L1Q2</strong> - Agricultura Moderna</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L1Q2.c</strong>, <strong>L1Q2.cpp</strong> ou <strong>L1Q2.java</strong></li>-->
+	<li>Entrada: <strong>L1Q2.in</strong></li>
+	<li>Saída: <strong>L1Q2.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/56'"><strong>Clarifications</strong></li>
+</ul>
+<pre>O pai de Jefferson é agricultor, e para gerenciar o número de trabalhadores do seu negocio pediu para ele fazer um programa que lhe ajudasse nessa função. Como Jefferson anda muito ocupado com as cadeiras da faculdade ele teve a idéia de criar uma questão na lista de algoritmos para que os estudantes fizessem o programa para que depois ele só tivesse que ajeitar possíveis falhas.
+Sabendo que os estudantes ainda estão no começo do período, então Jefferson pediu para a estrutura de dados usada no algoritmo fosse uma arvore AVL.
+O programa devera fazer as seguintes funções:
+Inserir:  Insere o trabalhador com seu nome, idade e salário.
+Listar: imprime todos os trabalhadores em ordem lexicográfica com seus respectivos salários.
+Estatística da idade: imprime a quantidade de pessoas com idade maior que X.
+Estatística do salário: imprime a quantidade de pessoas que ganha mais que X reais.
+Sair: termina o caso de teste.
+</pre>
+
+<h2>Formato de Entrada</h2>
+<pre>A opção inserir será dado no formato:
+O caractere ‘I’ seguido do nome do trabalhador, por um inteiro representando a idade e outro inteiro representando  seu salário.
+Ex:  I Renato 20 500
+Listar será dado pelo caractere ‘L’.
+Estatística idade será dada pela string “EI” seguido pela idade do trabalhador. 
+Estatística Salário será dada pela string “ES” seguido pelo salário do trabalhador.
+Sair será dado pelo caractere ‘S’ terminando o caso de teste.
+Obs.: nomes terão no Maximo 30 caracteres e todos os números irão caber em um inteiro.
+</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Inserir:
+Sempre que um novo usuário for inserido deve ser impresso em uma linha única  “Funcionario Cadastrado com Sucesso.”,  caso aconteça alguma rotação na arvore na linha logo abaixo deverá ser impresso  o tipo da rotação, rse (rotação simples para esquerda), rsd (rotação simples para direita), rdd (rotação dupla para direita) e rde (rotação dupla para esquerda). Caso o funcionário já esteja cadastrado deverá ser impresso “Funcionario ja estava cadastrado.”
+
+Listar:
+Deverá ser listado em cada linha um funcionário seguido por um espaço em branco seguido pelo seu salário, ou imprimir “Nao tem nenhum funcionario cadastrado.”.
+
+Estatística Idade:
+Deverá ser impresso um inteiro indicando o número de pessoas  com idade maior que a dada.
+
+Estatística Salário:
+Deverá ser impresso um inteiro indicando o número de funcionários que ganham mais que esse valor.
+Sair:
+Devera ser impresso  em uma linha separada “Programa finalizado com sucesso.”.
+Obs.: deverá ser impressa uma linha em branco entre dois casos de teste.
+</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/56"><strong>download</strong></a>):
+
+EI 20
+I b  40 600
+I c 30 550
+I a 20 500
+I d 28 900
+S</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/56"><strong>download</strong></a>):
+
+0
+Funcionario Cadastrado com Sucesso.
+Funcionario Cadastrado com Sucesso.
+Funcionario Cadastrado com Sucesso.
+Funcionario Cadastrado com Sucesso.
+Programa finalizado com sucesso.
+</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L0Q2_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L0Q2_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L0Q2</li>
+</ul>
+	
+<h1><strong>L0Q2</strong> - Integralandia x Nlogonia</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L0Q2.c</strong>, <strong>L0Q2.cpp</strong> ou <strong>L0Q2.java</strong></li>-->
+	<li>Entrada: <strong>L0Q2.in</strong></li>
+	<li>Saída: <strong>L0Q2.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/53'"><strong>Clarifications</strong></li>
+</ul>
+<pre><p style="margin: 0.5em auto">
+	Nlogonia está em guerra com Integralândia. Em tempos de guerra, qualquer informação que caia em mãos erradas pode significar a perda de uma batalha. Nlogonia tem uma tecnologia muito interessante, que de certa forma, encripta o horário dos seus ataques (Integralândia não sabe desse tipo de tecnlogia, mas não pense que ela é mais fraca por causa disso), esse aparelho é o Relógio Binário.
+</p>
+
+<p style="margin: 0.5em auto">
+	O Relógio Binário, é um tipo de relógio que mostra a hora num formato binário, a partir de um formato sexagisemal (apenas 6 bits importam). Os relógios binários usam 3 colunas de LED para representar zeros(0) e uns (1), e cada coluna (ou linha) representa uma unidade de tempo (hora, minuto ou segundo).
+</p>
+
+<p style="margin: 0.5em auto">
+	Esses relógios são famososo e Nlogonia e cada soldado quando vai pra guerra ganha um relógio novinho. Os soldados gostam de usar esse relógio de duas maneiras:
+</p>
+
+<ol style="margin: 0.5em auto;list-style: number;margin-left:20px">
+	<li>Colunas de LED, dispostas verticalmente.</li>	
+	<li>Colunas de LED, dispostas horizontalmente.</li>
+</ol>
+
+<div style="width:100%;text-align:center"><img src="L0Q2_arquivos/37891.png"></div></pre>
+
+<h2>Formato de Entrada</h2>
+<pre>A primeira linha do input será um único inteiro N (1 &lt;= N &lt;= 1000) que dirá o número de casos de testes. Cada caso de teste conterá o horário no formato sexagesimal.</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Para cada caso de teste você deverá imprimir APENAS uma linha com os seguintes valores: O número do caso de teste (valor decimal, e começando a partir de 1), um espaço, o valor binário no formato vertical (18 valores binários), um espaço, o valor binário no formato horizontal (também 18 valores binários).</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/53"><strong>download</strong></a>):
+
+2
+10:37:49
+00:00:01</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/53"><strong>download</strong></a>):
+
+1 011001100010100011 001010100101110001
+2 000000000000000001 000000000000000001
+</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

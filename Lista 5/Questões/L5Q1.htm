@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L5Q1_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L5Q1_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L5Q1</li>
+</ul>
+	
+<h1><strong>L5Q1</strong> - Joazinho</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L5Q1.c</strong>, <strong>L5Q1.cpp</strong> ou <strong>L5Q1.java</strong></li>-->
+	<li>Entrada: <strong>L5Q1.in</strong></li>
+	<li>Saída: <strong>L5Q1.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/submit/63'"><strong>Submissão</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/63'"><strong>Clarifications</strong></li>
+</ul>
+<pre>Joãozinho achou um pergaminho que informava sobre uma caverna do tesouro. Muito curioso Joãozinho foi averiguar
+e viu que a caverna realmente existia. Porém existe um problema, a caverna não possui ventilação suficiente para 
+Joãozinho respirar por muito tempo. Joãozinho descobriu que o baú do tesouro precisa de uma chave para ser aberto,
+esta chave também se encontra dentro da caverna. Para resolver o problema da ventilação, Joãzinho inventou um robô
+que pode fazer o serviço para ele, porém existe outro problema, se Joãozinho leva x minutors para pegar a chave e sair da 
+caverna, o robô leva 2*x minutos (o dobro do tempo de Joãozinho).A cada passo que Joãozinho dá se passa 1 minuto,
+e a cada passo que o robô dá se passam 2. Joãozinho e o robô não podem estar dentro da caverna juntos, pois ou Joãozinho
+controla o robô ou ele anda pela caverna. Como Joãozinho não tem muita paciência, ele pediu para que você informe para 
+ele qual o menor tempo que ele consegue estar com o tesouro do lado de fora da caverna. </pre>
+
+<h2>Formato de Entrada</h2>
+<pre>A primeira linha da entrada será composta por um inteiro T, o número de casos de teste. Para cada caso de teste haverão
+2 inteiros, N e M, que são o número de linhas e colunas respectivamente, referentes a descrição da caverna. Após isso, 
+haverão N linhas com M valores em cada uma delas, para descrever a caverna. Os possível valores são:
+
+# - Parede da caverna
+. - Local por onde pode se passear livremente
+C - Local onde se encontra a chave do baú
+B - Local onde se encontra o baú do tesouro
+P - Entrada/saída da caverna
+Obs.: Tanto Joãozinho como o robô só se move nas 4 direções se não houver parede, sendo elas, Norte, Sul, Leste e Oeste.
+
+Haverá apenas 1 C, B e P para cada mapa descrito.
+
+Na próxima linha haverá um inteiro K, que é o tempo que Joãozinho consegue ficar dentro da caverna sem respirar.
+
+Limites:
+
+1 &lt;= T &lt;= 50
+1 &lt;= N,M &lt;= 1000
+0 &lt;= K &lt;= 1000000
+</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Para cada caso, imprima em uma única linha "Caso #x: y", onde x é o número do caso correspondente e y é o tempo mínimo para
+Joãozinho concluir sua busca. Caso seja impossível tal fato, o valor de y deverá ser -1.</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/63"><strong>download</strong></a>):
+
+1
+4 4
+####
+#PB#
+#.C#
+####
+0</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/63"><strong>download</strong></a>):
+
+Caso #1: 8
+</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

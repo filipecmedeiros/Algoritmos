@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1373740023 source:c:\users\filipe\desktop\l2q1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1373813043 source:d:\documents\engenharia da computação\4° período\algoritmos\listas\2013.1\lista 2\l2q1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

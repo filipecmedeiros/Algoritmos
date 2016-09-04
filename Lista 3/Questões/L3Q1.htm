@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L3Q1_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L3Q1_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L3Q1</li>
+</ul>
+	
+<h1><strong>L3Q1</strong> - Hugo, o observador.</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L3Q1.c</strong>, <strong>L3Q1.cpp</strong> ou <strong>L3Q1.java</strong></li>-->
+	<li>Entrada: <strong>L3Q1.in</strong></li>
+	<li>Saída: <strong>L3Q1.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/59'"><strong>Clarifications</strong></li>
+</ul>
+<pre>	Uma das conclusões mais importantes da ciência do século XX é que o nosso universo tem, atrás de si, uma longa história. Tal como os humanos observadores de estrelas, também as estrelas nascem, vivem e, finalmente, morrem.
+	O que permite o encontro de nós humanos e as estrelas,apesar de tão distante delas, é a luz. Quando observamos o céu, vemos apenas uns pontos brilhantes, porém com o advento do telescópio revelou-se muito o número de estrelas.  
+	Hugo Freire, um observador de estrelas, toda a noite na varanda do seu apartamento (Hugo mora beira-mar) ele tem o seguinte hábito: Se duas estrelas estão perto o suficiente uma da outra, elas devem pertencer a mesma constelação. Hugo quer nomear essas constelações mas como ele é amador, ele tem medo de botar nomes aleatórios. Então, você pode ajuda-lo pelo menos contar quantas constelações há no céu?
+	
+	Observação: Duas estrelas pertencem a mesma constelação se a distância entre as suas projeções em um plano bidimensional não é mais que X unidades de comprimento.</pre>
+
+<h2>Formato de Entrada</h2>
+<pre>Na primeira linha será um inteiro T(T ≤ 50) que é o número de casos de testes. Nas T linhas seguintes cada caso conterá o número de estrelas N(N≤ 1000 ) e a distancia D(0.00 &lt;= D &lt;= 1000.00), em seguida nas N linhas seguintes se passa cada ponto (x,y) da  estrela (−1000.00 ≤ X, Y ≤ 1000.00).	</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Para cada caso teste,  é impresso uma linha :”Caso K: NUM”, onde  K (iniciando de 1) é o número do caso e NUM o número de constelações. Olhem o caso exemplo para mais informações.</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/59"><strong>download</strong></a>):
+
+3
+4 2.8
+2.5 2.1
+4.3 3.9
+-1.0 0.4
+0.0 0.6
+6 200.4
+100.23 209.32
+225.72 402.20
+-7.86 -15.29
+430.6 78.9
+103.1 106.8
+548.7 189.5
+2 500.0
+10.5 5.75
+16.2 0</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/59"><strong>download</strong></a>):
+
+Caso 1: 2
+Caso 2: 3
+Caso 3: 1
+</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

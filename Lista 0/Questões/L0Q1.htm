@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L0Q1_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L0Q1_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L0Q1</li>
+</ul>
+	
+<h1><strong>L0Q1</strong> - Soma</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L0Q1.c</strong>, <strong>L0Q1.cpp</strong> ou <strong>L0Q1.java</strong></li>-->
+	<li>Entrada: <strong>L0Q1.in</strong></li>
+	<li>Saída: <strong>L0Q1.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/52'"><strong>Clarifications</strong></li>
+</ul>
+<pre>Some A com B</pre>
+
+<h2>Formato de Entrada</h2>
+<pre>A primeira linha do input, será um inteiro n que indicará a quantidade de casos de teste (1 &lt;= n &lt;= 1000), n linhas seguirão com dois inteiros positivos A e B. E A e B terão até 10^5 dígitos</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Para cada caso de teste imprima o resultado da soma.</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/52"><strong>download</strong></a>):
+
+3
+1 1
+3 3
+1073741823 1073741823</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/52"><strong>download</strong></a>):
+
+2
+6
+2147483646</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

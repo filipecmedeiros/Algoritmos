@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L5Q2_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L5Q2_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L5Q2</li>
+</ul>
+	
+<h1><strong>L5Q2</strong> - Duck Tales</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L5Q2.c</strong>, <strong>L5Q2.cpp</strong> ou <strong>L5Q2.java</strong></li>-->
+	<li>Entrada: <strong>L5Q2.in</strong></li>
+	<li>Saída: <strong>L5Q2.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/submit/64'"><strong>Submissão</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/64'"><strong>Clarifications</strong></li>
+</ul>
+<pre>	Ah, os desenhos... O que seria das nossas infâncias sem eles? Seriam tristes, com certeza! Certa noite, Artur conversando com seu amigo Sérgio, estavam relembrando sobre alguns clássicos dos desenhos, e um deles foi o Duck Tales (http://www.youtube.com/watch?v=d-jYUH_hiCY). Esse desenho foi um dos melhores, simplesmente pelo fato de ter Tio Patinhas, Huguinho, Zezinho e Luisinho envolvido em altas aventuras.
+	Nos lembramos em que um dos episódios havia um Dijkstra implícito no desenho (nessa época desenhos eram educativos), e foi mais ou menos assim o episódio:
+	
+	Tio Patinhas e seus sobrinhos tinham que passar por um terreno (o terreno era uma array de números bidimensional compreendidos de 0 a 9) e eles nessa array so podiam andar para o norte, sul, leste e oeste. Toda vez que eles passavam por uma das partes do terreno eles tinham que pagar um certo valor. 
+	Todos aqui sabem a fama de Tio Patinhas quanto ao dinheiro. Como ele não quer gastar muito dinheiro ele pediu a você (manjador das artes da economia) para que dada uma configuração do terreno encontre o menor custo da entrada até a saida do terreno.
+	
+	Então resumindo, encontre o menor custo, de ir da posição mais acima mais a esquerda, até a posição mais abaixo mais a direita.</pre>
+
+<h2>Formato de Entrada</h2>
+<pre>Irão haver vários casos. A primeira linha será um inteiro positivo definindo a quantidade de casos de teste. Em cada caso de teste, será dado em uma linha um inteiro N indicando o número de linhas do terreno e em outra linha um inteiro M indicando o número de colunas do terreno, e depois N linhas seguirão contendo os números do terreno separado por espaços.
+
+Limites -&gt; 1 &lt;= N, M &lt; 301</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Para cada caso de teste imprima "Caso x: yn", onde x é o número do caso de teste iniciando de 1, e y é o valor do menor custo.</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/64"><strong>download</strong></a>):
+
+1
+1
+6
+0 1 2 3 4 6</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/64"><strong>download</strong></a>):
+
+Caso 1: 16
+</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>IF672 [CIn-UFPE]</title>
+
+	<link href="L2Q2_arquivos/style.css" rel="stylesheet" type="text/css">
+	<link href="L2Q2_arquivos/notas.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<script>
+$ = function(id) {
+	return document.getElementById(id);
+}
+hide_box = function (node) {
+	node.parentNode.style.opacity = 0.0;
+	return false;
+}
+hide_all_warnings = function () {
+	$('notice_box').style.opacity = 0.0;
+	$('error_box').style.opacity = 0.0;
+}
+scrolls_to = function(id) {
+	var node = $('scroll_point_'+id);
+	if (node)
+		node.scrollIntoView();
+}
+window.onload = function() {
+	setTimeout("hide_all_warnings()", 5000);
+}
+</script>
+
+<div id="notice_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="error_box" style="opacity: 0.0; visibility: hidden;"><div class="warning_content" onclick="return hide_box(this);"></div></div>
+
+<div id="navi">
+	<div id="navi_shadow"></div>
+	<ul id="navi_options">
+		<div id="logo_cin"></div>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php';">Home</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/avisos.htm';">Avisos</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/programacao.htm';">Cronograma</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists';">Listas</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/aulasPraticas.htm';">Monitoria</li>
+		<li onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/pages/material.htm';">Material</li>
+					<div id="login_button" onclick="window.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/login';">login</div>
+			</ul>
+	
+</div>
+
+<div id="content">
+
+<ul id="browse">
+	<li onclick="document.location = 'http://moreno.cin.ufpe.br/~if672ec/index.php/home/lists'">Listas</li>
+	<li>L2Q2</li>
+</ul>
+	
+<h1><strong>L2Q2</strong> - Pirâmides? Só que não!</h1>
+<ul class="lista_menu">
+	<!--<li>Código fonte: <strong>L2Q2.c</strong>, <strong>L2Q2.cpp</strong> ou <strong>L2Q2.java</strong></li>-->
+	<li>Entrada: <strong>L2Q2.in</strong></li>
+	<li>Saída: <strong>L2Q2.out</strong></li>
+		<li style="background: #A22; top: -28px; float: right;" onclick="window.location='http://moreno.cin.ufpe.br/~if672ec/index.php/home/clarifications/58'"><strong>Clarifications</strong></li>
+</ul>
+<pre>Um viajante de uma civilização diferente chegou ao Cin. Ele disse que eles vivem em pirâmides, mas não em simples pirâmides, e sim pirâmides de várias dimensões que contem pirâmides dentro delas. Mas, por incrível que pareça, ninguém da civilização a qual ele pertence sabe como guardar as informações das várias pirâmides que eles moram. Coincidentemente, elas funcionam exatamente como as árvores B. Cada morador da pirâmide mora em um cubículo, que fica em um setor de N cubículos em um dos níveis, onde estes setores também podem gerar novos setores. À medida que a quantidade de moradores vai aumentando, a quantidade de níveis e setores também vão aumentando, de baixo para cima. Os moradores do topo da pirâmide principal são chamados de líderes da mesma. As dimensões das pirâmides serão determinadas pela ordem da arvore B. Ex: Ordem 2 -&gt; Em cada setor pode haver 4 moradores e este setor pode criar 5 setores.
+	Os moradores serão organizados pela idade.  Nessa civilizações, não existe moradores com a mesma idade. O sistema deve inserir moradores, sem quebrar as regras da árvore B, fazer busca de moradores e imprimir todos os moradores do complexo. Todas as vezes que os moradores-líderes do setor principal (setor do topo) forem modificados, eles devem ser relatado na saída.</pre>
+
+<h2>Formato de Entrada</h2>
+<pre>O arquivo trará um inteiro (0 &lt; N &lt;10) que indicará a ordem da árvore. Depois, as seguintes instruções podem aparecer:
+Inserir X
+Busca X
+Imprime
+Haverá uma linha em branco entre os casos.</pre>
+
+<h2>Formato de Saída</h2>
+<pre>Se o comando for Inserir X, deverá ser impresso “X inserido com sucesso. Cisoes: Y”, onde Y é o numero de cisões que foram necessárias para inserir X.
+Se o comando for Buscar X, deverá ser impresso “X: nivel Y - Setor: M moradores”, onde Y é o nivel do morador e M é a quantidade de moradores no setor. Se X não estiver na arvore, deverá ser impresso “X nao foi cadastrado”.
+Se o comando for Imprime, as idades deveram sem impressas em ordem decrescente, informando também o nível que ela se encontra. Ex: I – L, onde I é idade e L é o nível.
+Se os lideres forem alterados, deve ser impressos no formato: “Lideres: L1 – L2 – L3 ...”
+Deve haver apenas uma linha em branco ENTRE casos.</pre>
+
+<h2>Exemplos</h2>
+<div class="questao_ex_in_out">
+<div class="questao_input">
+<pre>Entrada (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_input/58"><strong>download</strong></a>):
+
+1
+Insere 20
+Insere 80
+Insere 40
+Insere 30
+Busca 30
+Insere 25
+Busca 30
+Busca 42
+Imprime
+Insere 100
+Insere 150</pre>
+</div>
+<div class="questao_output">
+<pre>Saída (<a href="http://moreno.cin.ufpe.br/%7Eif672ec/index.php/home/download_output/58"><strong>download</strong></a>):
+
+20 inserido com sucesso. Cisoes: 0
+Lideres: 20
+80 inserido com sucesso. Cisoes: 0
+Lideres: 20 - 80
+40 inserido com sucesso. Cisoes: 1
+Lideres: 40
+30 inserido com sucesso. Cisoes: 0
+30: nivel 2 - Setor: 2 moradores
+25 inserido com sucesso. Cisoes: 1
+Lideres: 25 - 40
+30: nivel 2 - Setor: 1 morador
+42 nao foi cadastrado
+80 - 2
+40 - 1
+30 - 2
+25 - 1
+20 - 2
+100 inserido com sucesso. Cisoes: 0
+150 inserido com sucesso. Cisoes: 2
+Lideres: 40</pre>
+</div>
+</div>
+
+</div>
+
+
+</body></html>
